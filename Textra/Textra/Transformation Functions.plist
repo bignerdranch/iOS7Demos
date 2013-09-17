@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Text Transformers</key>
+	<array>
+		<dict>
+			<key>Name</key>
+			<string>Rot13</string>
+			<key>Function Name</key>
+			<string>rot13</string>
+			<key>Function Body</key>
+			<string>return rot13Processor(input);</string>
+			<key>Type</key>
+			<string>Transformer</string>
+		</dict>
+	</array>
+	<key>Input Transformers</key>
+	<array>
+		<dict>
+			<key>Name</key>
+			<string>Binary ASCII</string>
+			<key>Function Name</key>
+			<string>binary</string>
+			<key>Function Body</key>
+			<string>return asciiTable[input];</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>N Vwls</string>
+			<key>Function Name</key>
+			<string>stripVowels</string>
+			<key>Function Body</key>
+			<string>if (input == &quot;a&quot; || input == &quot;e&quot; || input == &quot;i&quot; || input == &quot;o&quot; || input == &quot;u&quot;) return &quot;&quot;; else return input;</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Morse Code</string>
+			<key>Function Name</key>
+			<string>morse</string>
+			<key>Function Body</key>
+			<string>return morseTable[input.toUpperCase()];</string>
+		</dict>
+	</array>
+</dict>
+</plist>
