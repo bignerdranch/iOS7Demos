@@ -102,7 +102,9 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 
 	CGRect beginFrame = [container convertRect:cell.bounds fromView:cell];
     CGRect endFrame = [transitionContext initialFrameForViewController:fromVC];
-	endFrame = CGRectInset(endFrame, 40.0, 40.0);
+
+    // DEMO: Remove this line for full screen goodness
+//	endFrame = CGRectInset(endFrame, 40.0, 40.0);
 
 	UIView *move = nil;
 	if (toVC.isBeingPresented) {
