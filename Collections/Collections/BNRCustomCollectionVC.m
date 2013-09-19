@@ -113,8 +113,11 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 		move.frame = beginFrame;
 		cell.hidden = YES;
 	} else {
+        
+        // DEMO: comment these 2 lines out to see what happens with elements inside modal view
         BNRModalVC *modalVC = (BNRModalVC *)fromVC;
         [modalVC.centerLabel setAlpha:0.0];
+
 		move = [fromView snapshotViewAfterScreenUpdates:YES];
 		move.frame = fromView.frame;
 		[fromView removeFromSuperview];
