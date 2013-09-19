@@ -19,7 +19,7 @@
 - (NSInteger)collectionView:(UICollectionView *)collectionView
      numberOfItemsInSection:(NSInteger)section
 {
-    return 1;
+    return 10;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
@@ -27,14 +27,29 @@
 {
     UICollectionViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"cell"
                                                                                 forIndexPath:indexPath];
+
+    // DEMO: get a nice color palette so we have unique cells
+    UIColor *color = [UIColor colorWithRed: (((int)cell >> 0) & 0xFF) / 255.0
+                                     green: (((int)cell >> 8) & 0xFF) / 255.0
+                                      blue: (((int)cell >> 16) & 0xFF) / 255.0
+                                     alpha: 1.0];
+    [cell setBackgroundColor:color];
+
     return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView
 didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
-    UIViewController *toVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"modalVC"];
+    BNRModalVC *toVC = [self.storyboard instantiateViewControllerWithIdentifier:@"modalVC"];
+
+    // DEMO: Use our cell's color
+    UIColor *color = [[collectionView cellForItemAtIndexPath:indexPath] backgroundColor];
+    [toVC.view setBackgroundColor:color];
+
+    // DEMO: Once more with content
+    NSString *numberString = [NSString stringWithFormat:@"I'm number %i!", indexPath.row];
+    [toVC.centerLabel setText:numberString];
 
     toVC.transitioningDelegate = self;
     toVC.modalPresentationStyle = UIModalPresentationCustom;
@@ -66,25 +81,51 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext
 {
+	NSIndexPath *selected = self.collectionView.indexPathsForSelectedItems[0];
+	UICollectionViewCell *cell = [self.collectionView cellForItemAtIndexPath:selected];
+	
     UIView *container = transitionContext.containerView;
+	
+	UIViewController *fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     UIViewController *toVC = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+    UIView *fromView = fromVC.view;
     UIView *toView = toVC.view;
-    CGRect toFrame = [transitionContext finalFrameForViewController:toVC];
-    CGRect fromFrame = [transitionContext initialFrameForViewController:toVC];
-    UIViewController *fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
-    CGPoint center = fromVC.view.center;
-    CGRect shrunkBounds = CGRectInset(fromVC.view.bounds, 40.0, 40.0);
-//    toView.frame = toFrame;
-    [container addSubview:toView];
-    [UIView animateWithDuration:TRANSITION_DURATION
-                     animations: ^{
-                         toView.center = center;
-                         toView.bounds = shrunkBounds;
-                     }
-                     completion: ^(BOOL finished) {
+
+	CGRect beginFrame = [container convertRect:cell.bounds fromView:cell];
+    CGRect endFrame = [transitionContext initialFrameForViewController:fromVC];
+	endFrame = CGRectInset(endFrame, 40.0, 40.0);
+
+	UIView *move = nil;
+	if (!_bnr_isPresenting) {
+		toView.frame = endFrame;
+        //        BNRModalVC *modalVC = (BNRModalVC *)fromVC; //labels are backwards
+//        [modalVC.centerLabel setAlpha:0.0];
+		move = [toView snapshotViewAfterScreenUpdates:YES];
+		move.frame = beginFrame;
+		cell.hidden = YES;
+	} else {
+		move = [fromView snapshotViewAfterScreenUpdates:YES];
+		move.frame = fromView.frame;
+		[fromView removeFromSuperview];
+	}
+    [container addSubview:move];
+	
+	[UIView animateWithDuration:TRANSITION_DURATION delay:0
+         usingSpringWithDamping:500 initialSpringVelocity:15
+                        options:0 animations:^{
+		move.frame = _bnr_isPresenting ? beginFrame : endFrame;}
+                     completion:^(BOOL finished) {
+                         if (!_bnr_isPresenting) {
+                             [move removeFromSuperview];
+                             toView.frame = endFrame;
+                             [container addSubview:toView];
+                         } else {
+                             cell.hidden = NO;
+                         }
+                         _bnr_isPresenting = !_bnr_isPresenting;
+                         
                          [transitionContext completeTransition: YES];
                      }];
-//    [transitionContext completeTransition:YES];
 }
 
 @end

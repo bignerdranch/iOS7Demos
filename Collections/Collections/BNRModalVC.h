@@ -10,4 +10,6 @@
 
 @interface BNRModalVC : UIViewController
 
+@property (nonatomic, weak) IBOutlet UILabel *centerLabel;
+
 @end
