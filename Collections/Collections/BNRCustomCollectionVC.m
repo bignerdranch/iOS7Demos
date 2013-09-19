@@ -74,7 +74,7 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath
     UIViewController *fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     CGPoint center = fromVC.view.center;
     CGRect shrunkBounds = CGRectInset(fromVC.view.bounds, 40.0, 40.0);
-    toView.frame = toFrame;
+//    toView.frame = toFrame;
     [container addSubview:toView];
     [UIView animateWithDuration:TRANSITION_DURATION
                      animations: ^{

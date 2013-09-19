@@ -21,10 +21,11 @@
     [navItem setTitle:@"Large Tiles"];
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    [self.collectionView reloadData];
-}
+//- (void)viewDidAppear:(BOOL)animated
+//{
+//    [super viewWillAppear:animated];
+////    [self.collectionView reloadData];
+//}
 
 #pragma mark - UICollectionViewDataSource
 
