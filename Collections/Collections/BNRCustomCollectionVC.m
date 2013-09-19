@@ -4,9 +4,7 @@
 
 #define TRANSITION_DURATION 1.0
 
-@interface BNRCustomCollectionVC () <UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning> {
-	BOOL _bnr_isPresenting;
-}
+@interface BNRCustomCollectionVC () <UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning>
 
 @end
 
@@ -107,7 +105,7 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 	endFrame = CGRectInset(endFrame, 40.0, 40.0);
 
 	UIView *move = nil;
-	if (!_bnr_isPresenting) {
+	if (toVC.isBeingPresented) {
 		toView.frame = endFrame;
         //        BNRModalVC *modalVC = (BNRModalVC *)fromVC; //labels are backwards
 //        [modalVC.centerLabel setAlpha:0.0];
@@ -124,16 +122,15 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 	[UIView animateWithDuration:TRANSITION_DURATION delay:0
          usingSpringWithDamping:500 initialSpringVelocity:15
                         options:0 animations:^{
-		move.frame = _bnr_isPresenting ? beginFrame : endFrame;}
+                            move.frame = toVC.isBeingPresented ?  endFrame : beginFrame;}
                      completion:^(BOOL finished) {
-                         if (!_bnr_isPresenting) {
+                         if (toVC.isBeingPresented) {
                              [move removeFromSuperview];
                              toView.frame = endFrame;
                              [container addSubview:toView];
                          } else {
                              cell.hidden = NO;
                          }
-                         _bnr_isPresenting = !_bnr_isPresenting;
                          
                          [transitionContext completeTransition: YES];
                      }];
