@@ -109,12 +109,12 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 	UIView *move = nil;
 	if (toVC.isBeingPresented) {
 		toView.frame = endFrame;
-        //        BNRModalVC *modalVC = (BNRModalVC *)fromVC; //labels are backwards
-//        [modalVC.centerLabel setAlpha:0.0];
 		move = [toView snapshotViewAfterScreenUpdates:YES];
 		move.frame = beginFrame;
 		cell.hidden = YES;
 	} else {
+        BNRModalVC *modalVC = (BNRModalVC *)fromVC;
+        [modalVC.centerLabel setAlpha:0.0];
 		move = [fromView snapshotViewAfterScreenUpdates:YES];
 		move.frame = fromView.frame;
 		[fromView removeFromSuperview];
@@ -133,7 +133,7 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath
                          } else {
                              cell.hidden = NO;
                          }
-                         
+
                          [transitionContext completeTransition: YES];
                      }];
 }
