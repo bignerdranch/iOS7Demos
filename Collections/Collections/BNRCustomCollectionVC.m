@@ -1,13 +1,24 @@
 #import "BNRCustomCollectionVC.h"
+#import "BNRModalVC.h"
 
 
 #define TRANSITION_DURATION 1.0
 
-@interface BNRCustomCollectionVC () <UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning>
+@interface BNRCustomCollectionVC () <UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning> {
+	BOOL _bnr_isPresenting;
+}
 
 @end
 
 @implementation BNRCustomCollectionVC
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+
+    // DEMO: Stop underlapping tab bar bottom
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+}
 
 #pragma mark - Collection View
 
