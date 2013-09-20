@@ -19,14 +19,20 @@
 }
 @end
 
+@interface BNRMyScene ()
+@property (nonatomic, assign) NSUInteger numberOfHats;
+@end
+
 @implementation BNRMyScene
 
 -(id)initWithSize:(CGSize)size {    
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
-        self.backgroundColor = [SKColor colorWithRed:0.9 green:0.95 blue:0.8 alpha:1.0];
+        self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.5 alpha:1.0];
         [self configurePhysicsWorld];
+        [self createCloud];
         [self createBuilding];
+        self.numberOfHats = 0;
     }
     return self;
 }
@@ -36,7 +42,10 @@
     
     for (UITouch *touch in touches) {
         CGPoint location = [touch locationInNode:self];
-        [self createBouncingBallAtPoint:location];
+        [self createBouncingHatAtPoint:location];
+        if (++self.numberOfHats == 3) {
+            [self createEmitter];
+        }
     }
 }
 
@@ -46,16 +55,13 @@
     self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:CGRectMake(0, 0, self.size.width, self.size.height)];
 }
 
-- (void)createBouncingBallAtPoint:(CGPoint)point
+- (void)createBouncingHatAtPoint:(CGPoint)point
 {
-    CGFloat radius = 15.0;
-    // for physics simulation, we'll pretend it's a circle
+    CGFloat radius = 20.0;
     SKPhysicsBody *physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:radius];
     physicsBody.velocity = CGVectorMake(300+arc4random_uniform(300), 200+arc4random_uniform(300));
     physicsBody.restitution = 0.8; // make it bouncy
-    CGSize size = CGSizeMake(radius*2, radius*2);
-    // ...but will render it as a square to see the rotation
-    SKSpriteNode *ball = [SKSpriteNode spriteNodeWithColor:[SKColor randomColor] size:size];
+    SKSpriteNode *ball = [SKSpriteNode spriteNodeWithImageNamed:@"bnrhat"];
     ball.position = point;
     ball.physicsBody = physicsBody;
     [self addChild:ball];
@@ -68,22 +74,45 @@
     one.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:size];
     one.position = CGPointMake(self.size.width-60, 180);
     one.physicsBody.restitution = 0.5;
-    SKSpriteNode *two = [SKSpriteNode spriteNodeWithColor:[SKColor blueColor] size:size];
+    SKSpriteNode *two = [SKSpriteNode spriteNodeWithColor:[SKColor redColor] size:size];
     two.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:size];
     two.position = CGPointMake(self.size.width-160, 180);
     two.physicsBody.restitution = 0.5;
     [self addChild:one];
     [self addChild:two];
     CGSize horiz = CGSizeMake(150, 25);
-    SKSpriteNode *three = [SKSpriteNode spriteNodeWithColor:[SKColor whiteColor] size:horiz];
+    SKSpriteNode *three = [SKSpriteNode spriteNodeWithImageNamed:@"roof"];
     three.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:horiz];
     three.position = CGPointMake(self.size.width-110, 300);
     three.physicsBody.restitution = 0.5;
     [self addChild:three];
 }
 
+- (void)createCloud
+{
+    SKSpriteNode *cloud = [SKSpriteNode spriteNodeWithImageNamed:@"cloud"];
+    cloud.position = CGPointMake(60, 280);
+    SKAction *goRight = [SKAction moveByX:300 y:0 duration:2];
+    SKAction *goLeft = [goRight reversedAction];
+    SKAction *action = [SKAction sequence:@[goRight, goLeft]];
+    [cloud runAction:[SKAction repeatActionForever:action]];
+    [self addChild:cloud];
+}
+
+- (void)createEmitter
+{
+    [self addChild:[self newFireEmitter]];
+}
+
+- (SKEmitterNode *) newFireEmitter
+{
+    NSString *firePath = [[NSBundle mainBundle] pathForResource:@"fire" ofType:@"sks"];
+    SKEmitterNode *fire = [NSKeyedUnarchiver unarchiveObjectWithFile:firePath];
+    fire.position = CGPointMake(self.size.width-110, 10);
+    return fire;
+}
+
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
 }
-
 @end

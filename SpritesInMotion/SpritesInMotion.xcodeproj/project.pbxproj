@@ -23,6 +23,11 @@
 		DA49760217E88CFA0048115D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA4975DD17E88CF90048115D /* UIKit.framework */; };
 		DA49760A17E88CFA0048115D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA49760817E88CFA0048115D /* InfoPlist.strings */; };
 		DA49760C17E88CFA0048115D /* SpritesInMotionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DA49760B17E88CFA0048115D /* SpritesInMotionTests.m */; };
+		DA49761617E9F7780048115D /* cloud@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA49761517E9F7780048115D /* cloud@2x.png */; };
+		DA49761817E9FAAD0048115D /* bnrhat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA49761717E9FAAD0048115D /* bnrhat@2x.png */; };
+		DA49761F17EA12F50048115D /* fire.sks in Resources */ = {isa = PBXBuildFile; fileRef = DA49761D17EA12F50048115D /* fire.sks */; };
+		DA49762017EA12F50048115D /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = DA49761E17EA12F50048115D /* spark.png */; };
+		DA49762417EA232A0048115D /* roof@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA49762317EA232A0048115D /* roof@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +63,11 @@
 		DA49760717E88CFA0048115D /* SpritesInMotionTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SpritesInMotionTests-Info.plist"; sourceTree = "<group>"; };
 		DA49760917E88CFA0048115D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DA49760B17E88CFA0048115D /* SpritesInMotionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpritesInMotionTests.m; sourceTree = "<group>"; };
+		DA49761517E9F7780048115D /* cloud@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cloud@2x.png"; sourceTree = "<group>"; };
+		DA49761717E9FAAD0048115D /* bnrhat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bnrhat@2x.png"; sourceTree = "<group>"; };
+		DA49761D17EA12F50048115D /* fire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = fire.sks; sourceTree = "<group>"; };
+		DA49761E17EA12F50048115D /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		DA49762317EA232A0048115D /* roof@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "roof@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,7 +136,12 @@
 				DA4975F117E88CF90048115D /* BNRViewController.m */,
 				DA4975F317E88CF90048115D /* BNRMyScene.h */,
 				DA4975F417E88CF90048115D /* BNRMyScene.m */,
+				DA49761517E9F7780048115D /* cloud@2x.png */,
+				DA49761717E9FAAD0048115D /* bnrhat@2x.png */,
+				DA49762317EA232A0048115D /* roof@2x.png */,
 				DA4975F817E88CF90048115D /* Images.xcassets */,
+				DA49761D17EA12F50048115D /* fire.sks */,
+				DA49761E17EA12F50048115D /* spark.png */,
 				DA4975E217E88CF90048115D /* Supporting Files */,
 			);
 			path = SpritesInMotion;
@@ -239,8 +254,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA4975E617E88CF90048115D /* InfoPlist.strings in Resources */,
+				DA49762417EA232A0048115D /* roof@2x.png in Resources */,
+				DA49761817E9FAAD0048115D /* bnrhat@2x.png in Resources */,
 				DA4975F917E88CF90048115D /* Images.xcassets in Resources */,
+				DA49762017EA12F50048115D /* spark.png in Resources */,
 				DA4975EF17E88CF90048115D /* Main.storyboard in Resources */,
+				DA49761617E9F7780048115D /* cloud@2x.png in Resources */,
+				DA49761F17EA12F50048115D /* fire.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
