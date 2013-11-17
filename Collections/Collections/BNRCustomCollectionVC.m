@@ -90,6 +90,9 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext
 {
+    // Uncomment this line if you want to poke around at what Apple is doing a bit more.
+    NSLog(@"context class is %@", [transitionContext class]);
+
 	NSIndexPath *selected = self.collectionView.indexPathsForSelectedItems[0];
 	UICollectionViewCell *cell = [self.collectionView cellForItemAtIndexPath:selected];
 	
@@ -101,10 +104,13 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath
     UIView *toView = toVC.view;
 
 	CGRect beginFrame = [container convertRect:cell.bounds fromView:cell];
+
+    // Would be safer to use container bounds here
     CGRect endFrame = [transitionContext initialFrameForViewController:fromVC];
 
     // DEMO: Remove this line for full screen goodness
-//	endFrame = CGRectInset(endFrame, 40.0, 40.0);
+	endFrame = CGRectInset(endFrame, 40.0, 40.0);
+
 
 	UIView *move = nil;
 	if (toVC.isBeingPresented) {
@@ -113,7 +119,7 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 		move.frame = beginFrame;
 		cell.hidden = YES;
 	} else {
-        
+
         // DEMO: comment these 2 lines out to see what happens with elements inside modal view
         BNRModalVC *modalVC = (BNRModalVC *)fromVC;
         [modalVC.centerLabel setAlpha:0.0];
