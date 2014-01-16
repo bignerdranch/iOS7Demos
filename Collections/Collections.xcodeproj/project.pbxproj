@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B838F1991837D3B300488686 /* magic.gif in Resources */ = {isa = PBXBuildFile; fileRef = B838F1981837D3B300488686 /* magic.gif */; };
 		B838F19C1837D4C700488686 /* BNRSimpleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B838F19B1837D4C700488686 /* BNRSimpleVC.m */; };
+		B853E3A418887E570008CAB5 /* BNRIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B853E3A318887E570008CAB5 /* BNRIntroViewController.m */; };
 		B8C0350B17E646A00089910C /* BNRPrototypeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C0350A17E646A00089910C /* BNRPrototypeCell.m */; };
 		B8C0350F17E906010089910C /* BNRCustomCollectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C0350E17E906010089910C /* BNRCustomCollectionVC.m */; };
 		B8C0351217E93E570089910C /* BNRModalVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C0351117E93E570089910C /* BNRModalVC.m */; };
@@ -44,6 +45,8 @@
 		B838F1981837D3B300488686 /* magic.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = magic.gif; sourceTree = "<group>"; };
 		B838F19A1837D4C700488686 /* BNRSimpleVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRSimpleVC.h; sourceTree = "<group>"; };
 		B838F19B1837D4C700488686 /* BNRSimpleVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRSimpleVC.m; sourceTree = "<group>"; };
+		B853E3A218887E570008CAB5 /* BNRIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRIntroViewController.h; sourceTree = "<group>"; };
+		B853E3A318887E570008CAB5 /* BNRIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRIntroViewController.m; sourceTree = "<group>"; };
 		B8A221B51837FFE0008E416C /* BNRSimpleVC-finished.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BNRSimpleVC-finished.m"; sourceTree = "<group>"; };
 		B8C0350917E646A00089910C /* BNRPrototypeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRPrototypeCell.h; sourceTree = "<group>"; };
 		B8C0350A17E646A00089910C /* BNRPrototypeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRPrototypeCell.m; sourceTree = "<group>"; };
@@ -141,6 +144,8 @@
 				B8C0351117E93E570089910C /* BNRModalVC.m */,
 				B838F19A1837D4C700488686 /* BNRSimpleVC.h */,
 				B838F19B1837D4C700488686 /* BNRSimpleVC.m */,
+				B853E3A218887E570008CAB5 /* BNRIntroViewController.h */,
+				B853E3A318887E570008CAB5 /* BNRIntroViewController.m */,
 				B8A221B51837FFE0008E416C /* BNRSimpleVC-finished.m */,
 				B8C0350D17E906010089910C /* BNRCustomCollectionVC.h */,
 				B8C0350E17E906010089910C /* BNRCustomCollectionVC.m */,
@@ -292,6 +297,7 @@
 				B8C0350B17E646A00089910C /* BNRPrototypeCell.m in Sources */,
 				B8C0350F17E906010089910C /* BNRCustomCollectionVC.m in Sources */,
 				B8FE6D0217C06C2E003F1A24 /* BNRSmallTileCollectionVC.m in Sources */,
+				B853E3A418887E570008CAB5 /* BNRIntroViewController.m in Sources */,
 				B8FE6CFF17C06C2E003F1A24 /* BNRLargeTileCollectionVC.m in Sources */,
 				B838F19C1837D4C700488686 /* BNRSimpleVC.m in Sources */,
 				B8FE6CF617C06C2E003F1A24 /* BNRAppDelegate.m in Sources */,
