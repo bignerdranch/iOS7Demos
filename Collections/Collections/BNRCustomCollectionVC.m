@@ -91,7 +91,7 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext
 {
     // Uncomment this line if you want to poke around at what Apple is doing a bit more.
-    NSLog(@"context class is %@", [transitionContext class]);
+//    NSLog(@"context class is %@", [transitionContext class]);
 
 	NSIndexPath *selected = self.collectionView.indexPathsForSelectedItems[0];
 	UICollectionViewCell *cell = [self.collectionView cellForItemAtIndexPath:selected];

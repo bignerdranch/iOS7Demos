@@ -10,6 +10,13 @@
 		B838F1991837D3B300488686 /* magic.gif in Resources */ = {isa = PBXBuildFile; fileRef = B838F1981837D3B300488686 /* magic.gif */; };
 		B838F19C1837D4C700488686 /* BNRSimpleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B838F19B1837D4C700488686 /* BNRSimpleVC.m */; };
 		B853E3A418887E570008CAB5 /* BNRIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B853E3A318887E570008CAB5 /* BNRIntroViewController.m */; };
+		B86B70661891983A000401D2 /* BNRSliderTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = B86B70651891983A000401D2 /* BNRSliderTransition.m */; };
+		B86B706918920FF7000401D2 /* RMZoomAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = B86B706818920FF7000401D2 /* RMZoomAnimator.m */; };
+		B87571F11890A8C30064E447 /* BNRInteractionsTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B87571F01890A8C30064E447 /* BNRInteractionsTestViewController.m */; };
+		B87571F418913BD80064E447 /* BNRFunkyNavigationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B87571F318913BD80064E447 /* BNRFunkyNavigationDelegate.m */; };
+		B87571F718913E470064E447 /* BNRFadeAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = B87571F618913E470064E447 /* BNRFadeAnimator.m */; };
+		B87571FA18913FEF0064E447 /* BNRBaseInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = B87571F918913FEF0064E447 /* BNRBaseInteractor.m */; };
+		B87571FD189143F90064E447 /* BNRPinchTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = B87571FC189143F90064E447 /* BNRPinchTransition.m */; };
 		B8C0350B17E646A00089910C /* BNRPrototypeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C0350A17E646A00089910C /* BNRPrototypeCell.m */; };
 		B8C0350F17E906010089910C /* BNRCustomCollectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C0350E17E906010089910C /* BNRCustomCollectionVC.m */; };
 		B8C0351217E93E570089910C /* BNRModalVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C0351117E93E570089910C /* BNRModalVC.m */; };
@@ -47,6 +54,20 @@
 		B838F19B1837D4C700488686 /* BNRSimpleVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRSimpleVC.m; sourceTree = "<group>"; };
 		B853E3A218887E570008CAB5 /* BNRIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRIntroViewController.h; sourceTree = "<group>"; };
 		B853E3A318887E570008CAB5 /* BNRIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRIntroViewController.m; sourceTree = "<group>"; };
+		B86B70641891983A000401D2 /* BNRSliderTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRSliderTransition.h; sourceTree = "<group>"; };
+		B86B70651891983A000401D2 /* BNRSliderTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRSliderTransition.m; sourceTree = "<group>"; };
+		B86B706718920FF7000401D2 /* RMZoomAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMZoomAnimator.h; sourceTree = "<group>"; };
+		B86B706818920FF7000401D2 /* RMZoomAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMZoomAnimator.m; sourceTree = "<group>"; };
+		B87571EF1890A8C30064E447 /* BNRInteractionsTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRInteractionsTestViewController.h; sourceTree = "<group>"; };
+		B87571F01890A8C30064E447 /* BNRInteractionsTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRInteractionsTestViewController.m; sourceTree = "<group>"; };
+		B87571F218913BD80064E447 /* BNRFunkyNavigationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRFunkyNavigationDelegate.h; sourceTree = "<group>"; };
+		B87571F318913BD80064E447 /* BNRFunkyNavigationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRFunkyNavigationDelegate.m; sourceTree = "<group>"; };
+		B87571F518913E470064E447 /* BNRFadeAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRFadeAnimator.h; sourceTree = "<group>"; };
+		B87571F618913E470064E447 /* BNRFadeAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRFadeAnimator.m; sourceTree = "<group>"; };
+		B87571F818913FEF0064E447 /* BNRBaseInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRBaseInteractor.h; sourceTree = "<group>"; };
+		B87571F918913FEF0064E447 /* BNRBaseInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRBaseInteractor.m; sourceTree = "<group>"; };
+		B87571FB189143F90064E447 /* BNRPinchTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRPinchTransition.h; sourceTree = "<group>"; };
+		B87571FC189143F90064E447 /* BNRPinchTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRPinchTransition.m; sourceTree = "<group>"; };
 		B8A221B51837FFE0008E416C /* BNRSimpleVC-finished.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BNRSimpleVC-finished.m"; sourceTree = "<group>"; };
 		B8C0350917E646A00089910C /* BNRPrototypeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRPrototypeCell.h; sourceTree = "<group>"; };
 		B8C0350A17E646A00089910C /* BNRPrototypeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRPrototypeCell.m; sourceTree = "<group>"; };
@@ -144,12 +165,26 @@
 				B8C0351117E93E570089910C /* BNRModalVC.m */,
 				B838F19A1837D4C700488686 /* BNRSimpleVC.h */,
 				B838F19B1837D4C700488686 /* BNRSimpleVC.m */,
+				B87571F518913E470064E447 /* BNRFadeAnimator.h */,
+				B87571F618913E470064E447 /* BNRFadeAnimator.m */,
+				B86B706718920FF7000401D2 /* RMZoomAnimator.h */,
+				B86B706818920FF7000401D2 /* RMZoomAnimator.m */,
+				B87571F818913FEF0064E447 /* BNRBaseInteractor.h */,
+				B87571F918913FEF0064E447 /* BNRBaseInteractor.m */,
+				B87571FB189143F90064E447 /* BNRPinchTransition.h */,
+				B87571FC189143F90064E447 /* BNRPinchTransition.m */,
+				B86B70641891983A000401D2 /* BNRSliderTransition.h */,
+				B86B70651891983A000401D2 /* BNRSliderTransition.m */,
 				B853E3A218887E570008CAB5 /* BNRIntroViewController.h */,
 				B853E3A318887E570008CAB5 /* BNRIntroViewController.m */,
 				B8A221B51837FFE0008E416C /* BNRSimpleVC-finished.m */,
 				B8C0350D17E906010089910C /* BNRCustomCollectionVC.h */,
 				B8C0350E17E906010089910C /* BNRCustomCollectionVC.m */,
 				B8FE6CFA17C06C2E003F1A24 /* Main_iPad.storyboard */,
+				B87571F218913BD80064E447 /* BNRFunkyNavigationDelegate.h */,
+				B87571F318913BD80064E447 /* BNRFunkyNavigationDelegate.m */,
+				B87571EF1890A8C30064E447 /* BNRInteractionsTestViewController.h */,
+				B87571F01890A8C30064E447 /* BNRInteractionsTestViewController.m */,
 				B8FE6CFD17C06C2E003F1A24 /* BNRLargeTileCollectionVC.h */,
 				B8FE6CFE17C06C2E003F1A24 /* BNRLargeTileCollectionVC.m */,
 				B8FE6D0017C06C2E003F1A24 /* BNRSmallTileCollectionVC.h */,
@@ -297,9 +332,16 @@
 				B8C0350B17E646A00089910C /* BNRPrototypeCell.m in Sources */,
 				B8C0350F17E906010089910C /* BNRCustomCollectionVC.m in Sources */,
 				B8FE6D0217C06C2E003F1A24 /* BNRSmallTileCollectionVC.m in Sources */,
+				B87571F11890A8C30064E447 /* BNRInteractionsTestViewController.m in Sources */,
+				B87571F718913E470064E447 /* BNRFadeAnimator.m in Sources */,
 				B853E3A418887E570008CAB5 /* BNRIntroViewController.m in Sources */,
 				B8FE6CFF17C06C2E003F1A24 /* BNRLargeTileCollectionVC.m in Sources */,
 				B838F19C1837D4C700488686 /* BNRSimpleVC.m in Sources */,
+				B87571FA18913FEF0064E447 /* BNRBaseInteractor.m in Sources */,
+				B86B706918920FF7000401D2 /* RMZoomAnimator.m in Sources */,
+				B87571FD189143F90064E447 /* BNRPinchTransition.m in Sources */,
+				B87571F418913BD80064E447 /* BNRFunkyNavigationDelegate.m in Sources */,
+				B86B70661891983A000401D2 /* BNRSliderTransition.m in Sources */,
 				B8FE6CF617C06C2E003F1A24 /* BNRAppDelegate.m in Sources */,
 				B8C0351217E93E570089910C /* BNRModalVC.m in Sources */,
 			);
