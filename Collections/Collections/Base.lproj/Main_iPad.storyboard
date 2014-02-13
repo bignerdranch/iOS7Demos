@@ -28,7 +28,7 @@
                                 <items/>
                             </toolbar>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="Dld-e0-5p4">
-                                <rect key="frame" x="305" y="112" width="158" height="29"/>
+                                <rect key="frame" x="160" y="112" width="158" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Slider"/>
@@ -43,22 +43,37 @@
                                 <rect key="frame" x="18" y="182" width="732" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </slider>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7E2-Xd-voC">
+                                <rect key="frame" x="468" y="112" width="99" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Fade"/>
+                                    <segment title="Zoom"/>
+                                </segments>
+                                <connections>
+                                    <action selector="animatedSelectorDidChange:" destination="9pv-A4-QxB" eventType="valueChanged" id="tf1-di-n6R"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="iQr-d4-Ar2" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="8qp-4k-ywN"/>
                             <constraint firstItem="iQr-d4-Ar2" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="9hT-Pl-9vo"/>
                             <constraint firstItem="iQr-d4-Ar2" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailing" id="GCv-eZ-Lr1"/>
+                            <constraint firstItem="Dld-e0-5p4" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" constant="160" id="MoI-el-VUU"/>
+                            <constraint firstAttribute="trailing" secondItem="7E2-Xd-voC" secondAttribute="trailing" constant="201" id="QIj-T3-XVh"/>
                             <constraint firstItem="KQZ-1w-vlD" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" constant="20" symbolic="YES" id="SrW-vH-Wgg"/>
                             <constraint firstItem="KQZ-1w-vlD" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" constant="250" id="VFC-dj-mBP"/>
-                            <constraint firstItem="Dld-e0-5p4" firstAttribute="top" secondItem="RrR-e9-j3N" secondAttribute="bottom" constant="48" id="Vp8-tp-QYW"/>
+                            <constraint firstItem="7E2-Xd-voC" firstAttribute="top" secondItem="RrR-e9-j3N" secondAttribute="bottom" constant="48" id="hBN-vr-OU1"/>
                             <constraint firstAttribute="trailing" secondItem="KQZ-1w-vlD" secondAttribute="trailing" constant="20" symbolic="YES" id="iui-m3-cBD"/>
-                            <constraint firstAttribute="centerX" secondItem="Dld-e0-5p4" secondAttribute="centerX" id="zn1-an-MKM"/>
+                            <constraint firstItem="Dld-e0-5p4" firstAttribute="top" secondItem="RrR-e9-j3N" secondAttribute="bottom" constant="48" id="ktu-tY-jxg"/>
+                            <constraint firstAttribute="centerX" secondItem="Dld-e0-5p4" secondAttribute="centerX" constant="145" id="zn1-an-MKM"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
                     <navigationItem key="navigationItem" id="PO5-2x-eM8"/>
                     <connections>
+                        <outlet property="animationSelector" destination="7E2-Xd-voC" id="dMC-XK-6aX"/>
                         <outlet property="interactionSelector" destination="Dld-e0-5p4" id="VtE-O2-pf6"/>
                         <outlet property="slider" destination="acu-2D-sqd" id="xPA-gp-qat"/>
                     </connections>

@@ -35,7 +35,17 @@
     UIView *fromView = fromVC.view;
 
     CGRect largeFrame = container.bounds;
-    CGRect smallFrame = CGRectMake(self.initialZoomPoint.x, self.initialZoomPoint.y, 1.0, 1.0);
+
+    // make sure we have a non-zero zoomPoint
+    CGPoint zoomPoint = self.initialZoomPoint;
+    if (zoomPoint.x == 0) {
+        zoomPoint.x = CGRectGetMidX(largeFrame);
+    }
+    if (zoomPoint.y == 0) {
+        zoomPoint.y = CGRectGetMidY(largeFrame);
+    }
+
+    CGRect smallFrame = CGRectMake(zoomPoint.x, zoomPoint.y, 1.0, 1.0);
 
 
     /* (spc/2013-09-19) TODO: There's got to be a better way than checking the
@@ -75,6 +85,12 @@
                          snapshot.frame = finalFrame;
                      }
                      completion:^(BOOL finished) {
+                         if ([transitionContext transitionWasCancelled]) {
+                             [snapshot removeFromSuperview];
+                             [transitionContext completeTransition:NO];
+                             return;
+                         }
+
                          [snapshot removeFromSuperview];
 
                          if (transitionForward) {

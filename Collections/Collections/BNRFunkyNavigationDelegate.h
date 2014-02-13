@@ -14,4 +14,7 @@
 - (void)activateShakeInteraction;
 - (void)activateSliderInteractionWithSlider:(UISlider *)slider;
 
+- (void)activateFadeTransition;
+- (void)activateZoomTransition;
+
 @end

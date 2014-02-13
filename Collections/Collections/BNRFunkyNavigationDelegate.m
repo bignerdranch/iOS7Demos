@@ -9,6 +9,8 @@
 #import "BNRFunkyNavigationDelegate.h"
 
 #import "BNRFadeAnimator.h"
+#import "RMZoomAnimator.h"
+
 #import "BNRPinchTransition.h"
 #import "BNRSliderTransition.h"
 
@@ -17,7 +19,8 @@ NSString * const kGrayScreenID = @"grayScreenVC";
 @interface BNRFunkyNavigationDelegate () 
 
 @property (nonatomic, strong) UIViewController *currentVC;
-@property (nonatomic, strong) BNRFadeAnimator *fadeAnimator;
+@property (nonatomic, strong) id<UIViewControllerAnimatedTransitioning> animator;
+@property (nonatomic, strong) Class animatorClass;
 @property (nonatomic, strong) id<BNRInteractor> interactor;
 
 @end
@@ -35,6 +38,29 @@ NSString * const kGrayScreenID = @"grayScreenVC";
     UIStoryboard *iPadStoryboard = [UIStoryboard storyboardWithName:@"Main_iPad" bundle:nil];
     UIViewController *grayVC = [iPadStoryboard instantiateViewControllerWithIdentifier:kGrayScreenID];
     return grayVC;
+}
+
+#pragma mark - set up different animation controllers
+
+- (void)activateFadeTransition
+{
+    self.animatorClass = [BNRFadeAnimator class];
+
+    Class currentClass = [self.animator class];
+    if (![currentClass isSubclassOfClass:[BNRFadeAnimator class]]) {
+        self.animator = nil;
+    }
+
+}
+
+- (void)activateZoomTransition
+{
+    self.animatorClass = [RMZoomAnimator class];
+
+    Class currentClass = [self.animator class];
+    if (![currentClass isSubclassOfClass:[RMZoomAnimator class]]) {
+        self.animator = nil;
+    }
 }
 
 #pragma mark - set up different interaction controllers
@@ -79,10 +105,15 @@ NSString * const kGrayScreenID = @"grayScreenVC";
                                                fromViewController:(UIViewController *)fromVC
                                                  toViewController:(UIViewController *)toVC
 {
-    if (!self.fadeAnimator) {
-        self.fadeAnimator = [BNRFadeAnimator new];
+    if (!self.animatorClass) {
+        self.animatorClass = [BNRFadeAnimator class];
     }
-    return self.fadeAnimator;
+
+    if (!self.animator) {
+
+        self.animator = [self.animatorClass new];
+    }
+    return self.animator;
 }
 
 - (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated

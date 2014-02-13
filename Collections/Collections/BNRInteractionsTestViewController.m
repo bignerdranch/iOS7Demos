@@ -43,4 +43,14 @@
     }
 }
 
+- (IBAction)animatedSelectorDidChange:(UISegmentedControl *)sender {
+    switch (sender.selectedSegmentIndex) {
+        case 0:
+            [self.navDelegate activateFadeTransition];
+            break;
+        case 1:
+            [self.navDelegate activateZoomTransition];
+    }
+}
+
 @end

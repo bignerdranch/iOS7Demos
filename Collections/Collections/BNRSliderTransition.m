@@ -23,6 +23,10 @@
     [slider addTarget:self
                action:@selector(sliderDidChange:)
      forControlEvents:UIControlEventValueChanged];
+    [slider addTarget:self
+               action:@selector(sliderFinishedSliding:)
+     forControlEvents:UIControlEventTouchUpInside];
+    // TODO: should handled canceled touches also
 }
 
 - (void)sliderDidChange:(UISlider *)sender
@@ -30,25 +34,30 @@
     NSLog(@"slider transition");
     if (!self.isInteractive) {
         self.interactive = YES;
-        [self startTransition];
+        [self bnr_startTransition];
         return;
     }
 
     CGFloat sliderValue = sender.value;
+    [self updateInteractiveTransition:sliderValue/100.0];
+}
+
+- (void)sliderFinishedSliding:(UISlider *)sender
+{
+    CGFloat sliderValue = sender.value;
     BOOL cancelValue = (sliderValue < 10);
     BOOL finishValue = (sliderValue > 90);
+    
     if (cancelValue) {
         self.interactive = NO;
         [self cancelInteractiveTransition];
     } else if (finishValue) {
         self.interactive = NO;
         [self finishInteractiveTransition];
-    } else {
-        [self updateInteractiveTransition:sliderValue/100.0];
     }
 }
 
-- (void)startTransition
+- (void)bnr_startTransition
 {
     if (self.operation == UINavigationControllerOperationPop) {
         [self.navController popViewControllerAnimated:YES];
