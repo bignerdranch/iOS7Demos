@@ -43,9 +43,9 @@
 - (void)sliderFinishedSliding:(UISlider *)sender
 {
     CGFloat sliderValue = sender.value;
-    BOOL cancelValue = (sliderValue < 10);
-    BOOL finishValue = (sliderValue > 90);
-    
+    BOOL cancelValue = (sliderValue < 50);
+    BOOL finishValue = (sliderValue >= 50);
+
     if (cancelValue) {
         self.interactive = NO;
         [self cancelInteractiveTransition];
