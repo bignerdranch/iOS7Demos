@@ -82,10 +82,10 @@
             </objects>
             <point key="canvasLocation" x="4006" y="-118"/>
         </scene>
-        <!--View Controller-->
+        <!--Gray ScreenVC-->
         <scene sceneID="8q7-DZ-VN2">
             <objects>
-                <viewController storyboardIdentifier="grayScreenVC" id="Qb0-69-NP9" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="grayScreenVC" id="Qb0-69-NP9" customClass="BNRGrayScreenVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XMU-IJ-mqa"/>
                         <viewControllerLayoutGuide type="bottom" id="0Kh-Ot-NDj"/>
@@ -94,7 +94,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Shake to go back" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bw-AM-1bP">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pinch to go back" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bw-AM-1bP">
                                 <rect key="frame" x="241" y="262" width="286" height="95"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
