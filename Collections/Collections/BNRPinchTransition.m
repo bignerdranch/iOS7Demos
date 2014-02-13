@@ -39,6 +39,7 @@
 - (void)removeInteractorFromViewController:(UIViewController *)vc
 {
     [vc.view removeGestureRecognizer:self.gestureRecognizer];
+    self.gestureRecognizer = nil;
 }
 
 - (void)handlePinch:(UIPinchGestureRecognizer *)pinchRecognizer
