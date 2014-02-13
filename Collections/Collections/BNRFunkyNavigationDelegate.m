@@ -131,6 +131,8 @@ NSString * const kGrayScreenID = @"grayScreenVC";
         }
         [self.interactor addInteractorToViewController:self.currentVC
                                           forOperation:UINavigationControllerOperationPop toViewController:nil];
+    } else {
+        [self.interactor removeInteractorFromViewController:viewController];
     }
     return;
 }
