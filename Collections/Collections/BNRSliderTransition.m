@@ -20,13 +20,11 @@
 
 - (void)setSlider:(UISlider *)slider
 {
-    [slider addTarget:self
-               action:@selector(sliderDidChange:)
-     forControlEvents:UIControlEventValueChanged];
-    [slider addTarget:self
-               action:@selector(sliderFinishedSliding:)
-     forControlEvents:UIControlEventTouchUpInside];
-    // TODO: should handled canceled touches also
+
+    // TODO: remove side effect. Right now setSlider has to be called
+    // before addInteractor can be called.
+    _slider = slider;
+    [self connectTargetActionForSlider:_slider];
 }
 
 - (void)sliderDidChange:(UISlider *)sender
@@ -68,6 +66,18 @@
     }
 }
 
+- (void)connectTargetActionForSlider:(UISlider *)slider
+{
+    [self.slider addTarget:self
+                    action:@selector(sliderDidChange:)
+          forControlEvents:UIControlEventValueChanged];
+    [self.slider addTarget:self
+                    action:@selector(sliderFinishedSliding:)
+          forControlEvents:UIControlEventTouchUpInside];
+    // TODO: should handled canceled touches and touch up outside also
+
+}
+
 - (void)addInteractorToViewController:(UIViewController *)currentVC
                          forOperation:(UINavigationControllerOperation)operation
                      toViewController:(UIViewController *)toVC
@@ -79,7 +89,13 @@
 
 - (void)removeInteractorFromViewController:(UIViewController *)vc
 {
-    return;
+    [self.slider removeTarget:self
+                       action:@selector(sliderDidChange:)
+             forControlEvents:UIControlEventValueChanged];
+    [self.slider removeTarget:self
+                       action:@selector(sliderFinishedSliding:)
+             forControlEvents:UIControlEventTouchUpInside];
+
 }
 
 @end
