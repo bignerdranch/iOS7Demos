@@ -74,6 +74,7 @@
         [function installInContext:self.context];
         if (function.isValid) {
             UIButton *button = (UIButton *)[self.view viewWithTag:1000 + self.textFunctions.count];
+            button.hidden = NO;
             if (button) {
                 [button setTitle:functionParams[@"Name"] forState:UIControlStateNormal];
                 [button addTarget:self action:@selector(textFunctionButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
