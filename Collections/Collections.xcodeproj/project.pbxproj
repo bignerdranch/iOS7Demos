@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D0FFCB518E0D47300C5D8DF /* BNRGrayScreenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D0FFCB418E0D47300C5D8DF /* BNRGrayScreenVC.m */; };
 		B838F1991837D3B300488686 /* magic.gif in Resources */ = {isa = PBXBuildFile; fileRef = B838F1981837D3B300488686 /* magic.gif */; };
 		B838F19C1837D4C700488686 /* BNRSimpleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B838F19B1837D4C700488686 /* BNRSimpleVC.m */; };
 		B853E3A418887E570008CAB5 /* BNRIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B853E3A318887E570008CAB5 /* BNRIntroViewController.m */; };
@@ -49,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7D0FFCB318E0D47300C5D8DF /* BNRGrayScreenVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRGrayScreenVC.h; sourceTree = "<group>"; };
+		7D0FFCB418E0D47300C5D8DF /* BNRGrayScreenVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRGrayScreenVC.m; sourceTree = "<group>"; };
 		B838F1981837D3B300488686 /* magic.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = magic.gif; sourceTree = "<group>"; };
 		B838F19A1837D4C700488686 /* BNRSimpleVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRSimpleVC.h; sourceTree = "<group>"; };
 		B838F19B1837D4C700488686 /* BNRSimpleVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRSimpleVC.m; sourceTree = "<group>"; };
@@ -161,6 +164,8 @@
 				B8FE6CF717C06C2E003F1A24 /* Main_iPhone.storyboard */,
 				B8C0350917E646A00089910C /* BNRPrototypeCell.h */,
 				B8C0350A17E646A00089910C /* BNRPrototypeCell.m */,
+				7D0FFCB318E0D47300C5D8DF /* BNRGrayScreenVC.h */,
+				7D0FFCB418E0D47300C5D8DF /* BNRGrayScreenVC.m */,
 				B8C0351017E93E570089910C /* BNRModalVC.h */,
 				B8C0351117E93E570089910C /* BNRModalVC.m */,
 				B838F19A1837D4C700488686 /* BNRSimpleVC.h */,
@@ -328,6 +333,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D0FFCB518E0D47300C5D8DF /* BNRGrayScreenVC.m in Sources */,
 				B8FE6CF217C06C2E003F1A24 /* main.m in Sources */,
 				B8C0350B17E646A00089910C /* BNRPrototypeCell.m in Sources */,
 				B8C0350F17E906010089910C /* BNRCustomCollectionVC.m in Sources */,

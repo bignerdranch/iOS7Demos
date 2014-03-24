@@ -22,7 +22,6 @@
 		5A2A48A317E7AD1D0058C237 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A2A48A117E7AD1D0058C237 /* InfoPlist.strings */; };
 		5A2A48A517E7AD1D0058C237 /* TextraTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A2A48A417E7AD1D0058C237 /* TextraTests.m */; };
 		5A2A48AF17E7AE2D0058C237 /* Transformation Functions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A2A48AE17E7AE2D0058C237 /* Transformation Functions.plist */; };
-		5A2A48B117E7AF960058C237 /* globals.js in Sources */ = {isa = PBXBuildFile; fileRef = 5A2A48B017E7AF960058C237 /* globals.js */; };
 		5A2A48B317E7BBC60058C237 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A2A48B217E7BBC60058C237 /* JavaScriptCore.framework */; };
 		5A2A48B617E7C1A70058C237 /* BNRTextFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A2A48B517E7C1A70058C237 /* BNRTextFunction.m */; };
 		5A2A48B717E7F8DD0058C237 /* globals.js in Resources */ = {isa = PBXBuildFile; fileRef = 5A2A48B017E7AF960058C237 /* globals.js */; };
@@ -270,7 +269,6 @@
 			files = (
 				5A2A488617E7AD1D0058C237 /* main.m in Sources */,
 				5A2A48B617E7C1A70058C237 /* BNRTextFunction.m in Sources */,
-				5A2A48B117E7AF960058C237 /* globals.js in Sources */,
 				5A2A488A17E7AD1D0058C237 /* BNRAppDelegate.m in Sources */,
 				5A2A489017E7AD1D0058C237 /* BNRViewController.m in Sources */,
 			);
@@ -483,6 +481,7 @@
 				5A2A48AA17E7AD1D0058C237 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5A2A48AB17E7AD1D0058C237 /* Build configuration list for PBXNativeTarget "TextraTests" */ = {
 			isa = XCConfigurationList;
@@ -491,6 +490,7 @@
 				5A2A48AD17E7AD1D0058C237 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
